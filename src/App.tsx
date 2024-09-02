@@ -1,26 +1,36 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppRoutes from './routes/routes';
+import Header from './components/Layout/Headers/Header';
+import Footer from './components/Layout/Footer/Footer';
+import { Box, Container } from '@mui/material'; // Import MUI components for styling
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh', // Set minimum height to fill the viewport
+        }}
+      >
+        <Header />
+        <Container
+          component="main"
+          sx={{
+            flex: 1, // Make main content flex
+            mt: 2, // Optional: Add some top margin
+            mb: 2, // Optional: Add some bottom margin
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <AppRoutes />
+        </Container>
+        <Footer />
+      </Box>
+    </Router>
   );
-}
+};
 
 export default App;
