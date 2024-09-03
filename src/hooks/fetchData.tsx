@@ -26,11 +26,11 @@ function useFetchData<T>(restFn: Function, params?: any) {
 
     fetchData();
 
-    // Cleanup function to set isMounted to false if component unmounts
     return () => {
       isMounted = false;
     };
-  }, [restFn]);
+  }, [restFn, params]);  // Add dependencies here
+
 
   return { data, loading, error };
 }
