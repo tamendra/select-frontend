@@ -11,7 +11,7 @@ import { HeaderNavOptions } from './contants';
 
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const ResponsiveAppBar: React.FC = () => {
+export const ResponsiveAppBar: React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   // const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -58,7 +58,8 @@ const ResponsiveAppBar: React.FC = () => {
               anchorElNav={anchorElNav}
               handleOpenNavMenu={handleOpenNavMenu}
               handleCloseNavMenu={handleCloseNavMenu}
-              pages={HeaderNavOptions.map(v => v.title)}
+              pages={HeaderNavOptions}
+
             />
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -107,5 +108,3 @@ const ResponsiveAppBar: React.FC = () => {
     </AppBar>
   );
 };
-
-export default ResponsiveAppBar;

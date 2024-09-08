@@ -1,12 +1,14 @@
 import { Menu, MenuItem, Typography, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import { INavMenu } from './contants';
 
 interface NavMenuProps {
   anchorElNav: null | HTMLElement;
   handleOpenNavMenu: (event: React.MouseEvent<HTMLElement>) => void;
   handleCloseNavMenu: () => void;
-  pages: string[];
+  pages: INavMenu[];
 }
 
 const NavMenu: React.FC<NavMenuProps> = ({ anchorElNav, handleOpenNavMenu, handleCloseNavMenu, pages }) => (
@@ -37,8 +39,14 @@ const NavMenu: React.FC<NavMenuProps> = ({ anchorElNav, handleOpenNavMenu, handl
       onClose={handleCloseNavMenu}
     >
       {pages.map((page) => (
-        <MenuItem key={page} onClick={handleCloseNavMenu}>
-          <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+        <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+          <Typography
+            component={RouterLink}
+            to={page.navpath}
+            sx={{ textAlign: 'center' }}>
+            {page.title}
+          </Typography>
+
         </MenuItem>
       ))}
     </Menu>
