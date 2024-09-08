@@ -2,7 +2,7 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <Box component="footer" sx={{ py: 3, backgroundColor: '#f1f1f1' }}>
       <Container>
@@ -13,5 +13,3 @@ const Footer: React.FC = () => {
     </Box>
   );
 };
-
-export default Footer;

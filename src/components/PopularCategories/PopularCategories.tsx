@@ -6,7 +6,7 @@ import { Category } from '../../types/category';
 import { CategoryCard } from '../CategoryCard/CategoryCard';
 import { Carousel } from '../UI/Carousal/Carousal';
 
-const PopularCategories: React.FC = () => {
+export const FeaturedCategories: React.FC = () => {
   const { data: categories } = useFetchData<Category>(fetchLatestCategories);
 
   return (
@@ -18,5 +18,3 @@ const PopularCategories: React.FC = () => {
     </>
   );
 };
-
-export default PopularCategories;

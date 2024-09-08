@@ -9,15 +9,16 @@ import { fetchFeaturedWebsites } from '../../services/websiteService';
 import { Carousel } from '../UI/Carousal/Carousal';
 import WebsiteCard from '../WebsiteCard/WebsiteCard';
 
-export const PopularWebsites: React.FC = () => {
+export const RecentlyAddedWebsites: React.FC = () => {
   const { data: websites } = useFetchData<Website>(fetchFeaturedWebsites);
 
   return (
     <Box sx={{ my: 4 }}>
       <Typography variant="h4" gutterBottom>
-        {getTranslation('TXT_FEATURED_WEBSITES')}
+        {getTranslation('TXT_RECENTLY_WEBSITES')}
       </Typography>
       <Carousel items={websites.map(website => <WebsiteCard website={website} />)} />
     </Box >
   );
 };
+

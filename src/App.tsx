@@ -2,8 +2,8 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './routes/routes';
-import Header from './components/Layout/Headers/Header';
-import Footer from './components/Layout/Footer/Footer';
+import { ResponsiveAppBar } from './components/Layout/Headers/Header';
+import { Footer } from './components/Layout/Footer/Footer';
 import { Box, Container } from '@mui/material'; // Import MUI components for styling
 
 const App: React.FC = () => {
@@ -16,7 +16,7 @@ const App: React.FC = () => {
           minHeight: '100vh', // Set minimum height to fill the viewport
         }}
       >
-        <Header />
+        <ResponsiveAppBar />
         <Container
           component="main"
           sx={{

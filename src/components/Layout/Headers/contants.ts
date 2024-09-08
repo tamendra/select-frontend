@@ -1,6 +1,10 @@
 import { AppRoute } from "../../../routes/constants";
+export interface INavMenu {
+  title: string;
+  navpath: string;
+}
 
-export const HeaderNavOptions = [{
+export const HeaderNavOptions: INavMenu[] = [{
   title: 'Category',
   navpath: AppRoute.CATEGORY
 },

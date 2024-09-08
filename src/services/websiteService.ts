@@ -33,3 +33,8 @@ export const fetchFeaturedWebsites = async () => {
   const response = await apiClient.get(ApiEndpoints.SITES);
   return response.data.splice(0,5);
 };
+
+export const fetchWebsiteDetails = async () => {
+  const response = await apiClient.get(ApiEndpoints.SITES);
+  return response.data.splice(0,1);
+};

@@ -1,19 +1,19 @@
-// src/pages/Home/Home.tsx
-
 import React from 'react';
 import { Container } from '@mui/material';
 import HeroSection from '../../components/HeroSection/HeroSection';
-import PopularCategories from '../../components/PopularCategories/PopularCategories';
-import FeaturedWebsites from '../../components/FeaturedWebsites/FeaturedWebsites';
+import { FeaturedCategories } from '../../components/PopularCategories/PopularCategories';
+import { PopularWebsites } from '../../components/FeaturedWebsites/FeaturedWebsites';
+import { RecentlyAddedWebsites } from '../../components/RecentlyAddedWebsites/RecentlyAddedWebsite';
 
-const Home: React.FC = () => {
+const Homepage = () => {
   return (
-    <Container>
+    <Container maxWidth="lg">
       <HeroSection />
-      <PopularCategories />
-      <FeaturedWebsites />
+      <FeaturedCategories />
+      <PopularWebsites />
+      <RecentlyAddedWebsites />
     </Container>
   );
 };
 
-export default Home;
+export default Homepage;
